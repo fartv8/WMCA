@@ -1,0 +1,18 @@
+{
+  "name": "GalleryImage",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string", "description": "Image title" },
+    "image_url": { "type": "string", "description": "URL of the image" },
+    "category": {
+      "type": "string",
+      "enum": ["sports", "wedding", "family"],
+      "description": "Photography category"
+    },
+    "featured": { "type": "boolean", "default": false, "description": "Whether this image is featured" },
+    "description": { "type": "string", "description": "Image description or caption" },
+    "tags": { "type": "array", "items": { "type": "string" }, "description": "Image tags for filtering" }
+  },
+  "required": ["title", "image_url", "category"],
+  "rls": { "read": "public", "create": "admin", "update": "admin", "delete": "admin" }
+}
